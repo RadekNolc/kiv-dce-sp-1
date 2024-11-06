@@ -1,0 +1,13 @@
+[loadbalancer]
+%{ for ip in loadbalancer_vm ~}
+${ip}
+%{ endfor ~}
+
+[backend]
+%{ for ip in backend_vm ~}
+${ip}
+%{ endfor ~}
+
+[all:vars]
+ansible_user=${vm_admin_user}
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
