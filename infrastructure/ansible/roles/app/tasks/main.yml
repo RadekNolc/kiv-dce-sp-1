@@ -1,0 +1,8 @@
+- name: Run application backend
+  docker_container:
+    name: app
+    image: ghcr.io/radeknolc/kiv-dce-sp-1:latest
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "5000:5000"

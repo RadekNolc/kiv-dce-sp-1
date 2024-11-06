@@ -1,0 +1,15 @@
+# Cluster installation
+
+- name: Initialize cluster Backend(s)
+  hosts: backend
+  become: true
+  roles:
+    - docker
+    - app
+
+- name: Initialize cluster LoadBalancer
+  hosts: loadbalancer
+  become: true
+  roles:
+    - docker
+    - nginx
