@@ -1,0 +1,13 @@
+services:
+  dce_workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    privileged: true
+    volumes:
+      - devcontainer-data:/var/devcontainer-data
+      - ..:/workspace
+
+volumes:
+  devcontainer-data:
+    external: false
